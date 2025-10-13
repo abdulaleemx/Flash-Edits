@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Flash Edits Design System - Dark Purple Gradient Theme
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Core brand colors - Dark Black Theme */
+    --background: 0 0% 3%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Primary purple accent (minimal use) */
+    --primary: 264 100% 50%;
+    --primary-foreground: 0 0% 98%;
+    --primary-dark: 0 0% 3%;
+
+    /* Secondary dark grays */
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 264 100% 50%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 12%;
+    --ring: 264 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Premium golden colors */
+    --golden: 45 96% 53%;
+    --golden-bright: 43 96% 56%;
+    --golden-dark: 32 95% 44%;
+
+    /* Custom gradients - Black based */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 3%), hsl(0 0% 8%));
+    --gradient-secondary: linear-gradient(135deg, hsl(0 0% 8%), hsl(0 0% 12%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 3%), hsl(0 0% 8%));
+    --gradient-golden: linear-gradient(135deg, hsl(var(--golden)), hsl(var(--golden-bright)));
+    
+    /* Shadows and effects - Subtle for black theme */
+    --shadow-glow: 0 0 40px hsl(264 100% 50% / 0.2);
+    --shadow-golden: 0 0 30px hsl(var(--golden) / 0.4);
+    --shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / 0.8);
+    
+  /* Animations */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Floating animations */
+  --float-distance: 20px;
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* Hero animations */
+  @keyframes lightning-glow {
+    0%, 100% { filter: drop-shadow(0 0 10px hsl(var(--golden) / 0.8)); }
+    50% { filter: drop-shadow(0 0 20px hsl(var(--golden) / 1)) drop-shadow(0 0 30px hsl(var(--golden) / 0.5)); }
+  }
+  
+  @keyframes particle-float {
+    0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translate(-100px, -100px) rotate(180deg); opacity: 0; }
+  }
+  
+  @keyframes text-fade-up {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Same as root since we use dark theme by default */
+    --background: 271 100% 11%;
+    --foreground: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    background: hsl(var(--background));
+    min-height: 100vh;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
